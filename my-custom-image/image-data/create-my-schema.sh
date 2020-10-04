@@ -29,7 +29,7 @@ echo "********************************************************"
 echo " TABLES CREATION COMPLETED"
 echo "********************************************************"
 
-su -p oracle -c "cd /db-install-scripts/db-creation && sqlplus my_user/my_password as sysdba @00_populate_tables.sql"
+su -p oracle -c "cd /db-install-scripts/db-creation && sqlplus my_user/my_password @00_populate_tables.sql"
 echo "********************************************************"
 echo " TABLES POPULATIONS COMPLETED"
 echo "********************************************************"
