@@ -36,3 +36,38 @@ To create the image ```	oracle/database:11.2.0.2-xe``` in your ```Local Registry
 
 After the build you will see the following two images in your Local Registry.
 ![Images](./doc/docker_images_oracle_standard.jpg)
+
+
+## Create your own Oracle image extending the standard one
+
+Build the image and run the container using the ```docker-compose``` file.
+>docker-compose up -d
+
+Now you should see the new image.
+![Images](./doc/docker_images_oracle_customized.jpg)
+
+Check if the container is running.
+>docker ps
+
+Wait until the running container goes in ```healthy``` STATUS.
+![Images](./doc/docker_container_oracle_customized.jpg)
+
+Connect to the running container.
+>docker container exec -it ea.oracle bash
+
+Check logs outside the running container. 
+>docker logs -f ea.oracle
+
+Check logs inside the running container.
+>bash-4.2# tail -100f $ORACLE_BASE/diag/rdbms/*/*/trace/alert*.log
+
+Test the DB connection from outside.
+>sqlplus sys/admin@localhost:7521/XE as sysdba
+
+Test the DB connection inside the container.
+>bash-4.2# sqlplus sys/admin@localhost:1521/XE as sysdba
+
+### Start/Stop Oracle instance
+>bash-4.2# /etc/init.d/oracle-xe start
+
+>bash-4.2# /etc/init.d/oracle-xe stop
