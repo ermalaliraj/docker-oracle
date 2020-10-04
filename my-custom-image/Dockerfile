@@ -10,6 +10,6 @@ ENV ORACLE_ALLOW_REMOTE=true
 
 ADD image-data /db-install-scripts
 
-RUN find /db-install-scripts -name "*.sh" -exec chmod +x {} \;
-RUN /db-install-scripts/$RUN_FILE
-RUN /db-install-scripts/create-my-schema.sh
+RUN find /db-install-scripts -name "*.sh" -exec chmod +x {} \; \
+    && /db-install-scripts/$RUN_FILE \ 
+    && /db-install-scripts/create-my-schema.sh

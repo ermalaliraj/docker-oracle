@@ -71,3 +71,12 @@ Test the DB connection inside the container.
 >bash-4.2# /etc/init.d/oracle-xe start
 
 >bash-4.2# /etc/init.d/oracle-xe stop
+
+
+### Windows files error when running on Linux
+Sometime when changing ```.sh``` files in Windows may happen that you see the error ```Error: bad interpreter: No such file or directory``` when running these files in Linux container. 
+In this case make sure the files do not have wrong characters. 
+>Find ```\r\n``` replace with ```\n``` in the incriminated ```.sh``` files.
+
+Or from ```Git Bash```
+>dos2Unix fileName.sh
