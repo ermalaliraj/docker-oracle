@@ -8,7 +8,8 @@ ENV RUN_FILE="runOracle.sh"
 ENV PATH=$ORACLE_HOME/bin:$PATH
 ENV ORACLE_ALLOW_REMOTE=true
 
-ADD image-data /db-install-scripts
+COPY image-data /db-install-scripts 
+COPY db-creation/db-schema db-creation/db-data /db-install-scripts/db-creation/
 
 RUN find /db-install-scripts -name "*.sh" -exec chmod +x {} \; \
     && /db-install-scripts/$RUN_FILE \ 

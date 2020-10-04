@@ -64,6 +64,9 @@ Check logs inside the running container.
 Test the DB connection from outside.
 >sqlplus sys/admin@localhost:7521/XE as sysdba
 
+Test the DB connection for the application user. The following are the data for connecting to the DB using a client like ```sqldeveloper```
+>sqlplus my_user/my_password@localhost:7521/XE
+
 Test the DB connection inside the container.
 >bash-4.2# sqlplus sys/admin@localhost:1521/XE as sysdba
 

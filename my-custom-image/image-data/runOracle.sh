@@ -124,12 +124,11 @@ if [ "$?" == "0" ]; then
    createDB;
 fi;
 
-echo "#########################"
+echo "################################################"
 echo "DATABASE IS READY TO USE! (custom runOracle.sh)"
-echo "#########################"
+echo "################################################"
 
-#/etc/init.d/oracle-xe start #ermal added
-#/etc/init.d/oracle-xe stop
+#/etc/init.d/oracle-xe start #if started here, in the next layer will not be running
 
 #tail -f $ORACLE_BASE/diag/rdbms/*/*/trace/alert*.log &
 childPID=$!
