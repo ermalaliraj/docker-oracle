@@ -1,7 +1,8 @@
 # docker-oracle
 
+How to Create a Docker Image with Oracle 11.2.0.2 -x.
 
-## Download docker Oracle Database image in your macchine
+## Download source and scripts
 
 ### Docker scripts files
 A full HOW TO create an image in your macchine is explained here [Oracle Database on Docker](https://github.com/oracle/docker-images/blob/master/OracleDatabase/SingleInstance)
@@ -26,7 +27,7 @@ Your file system should look like this, before running the command.
 	buildDockerImage.sh
 ```	
 
-## Create Oracle Database image in your macchine 
+## Create Oracle Database Docker image
 
 To create the image ```	oracle/database:11.2.0.2-xe``` in your local, run the following.
  
